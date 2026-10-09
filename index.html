@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تبيان المفصّل | من سورة ق إلى الناس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf7f0; --bg2:#fff; --ink:#1f2937; --muted:#6b7280;
+  --gold:#b8860b; --gold2:#d4af37; --green:#0e5a4a; --green2:#14705d;
+  --card-border:#e9dfc8; --shadow:0 8px 30px rgba(0,0,0,.07);
+  --chip:#f3ecda; --accent-grad:linear-gradient(135deg,#0e5a4a 0%,#1a8a70 55%,#b8860b 130%);
+  --fs:17px;
+}
+[data-theme="dark"]{
+  --bg:#0f1514; --bg2:#17201e; --ink:#eef3f1; --muted:#a7b8b3;
+  --gold:#d4af37; --gold2:#f0d778; --green:#7fd1b9; --green2:#4aa88c;
+  --card-border:#2a3633; --shadow:0 8px 30px rgba(0,0,0,.4);
+  --chip:#222e2b; --accent-grad:linear-gradient(135deg,#123f35 0%,#1a6b58 55%,#8a6d1c 130%);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--ink);font-size:var(--fs);line-height:1.9;transition:background .3s,color .3s}
+.quran-font{font-family:'Amiri',serif}
+header.hero{background:var(--accent-grad);color:#fff;padding:34px 18px 90px;position:relative;overflow:hidden;text-align:center}
+header.hero::before{content:'﷽';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Amiri';font-size:22rem;opacity:.08;pointer-events:none}
+.topbar{max-width:1100px;margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:space-between;position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.2rem}
+.logo{width:48px;height:48px;border-radius:16px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;font-family:'Amiri';font-size:1.7rem;backdrop-filter:blur(6px)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.btn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);color:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;font-family:inherit;font-weight:700;font-size:.9rem;backdrop-filter:blur(6px);transition:.2s}
+.btn:hover{background:rgba(255,255,255,.28);transform:translateY(-1px)}
+.hero h1{font-family:'Amiri';font-size:clamp(2rem,6vw,3.4rem);margin:22px 0 6px;position:relative;z-index:2}
+.hero p{max-width:700px;margin:0 auto;opacity:.92;position:relative;z-index:2}
+.container{max-width:1100px;margin:-55px auto 40px;padding:0 14px;position:relative;z-index:3}
+.toolbar{background:var(--bg2);border:1px solid var(--card-border);border-radius:20px;box-shadow:var(--shadow);padding:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.search{flex:1;min-width:220px;display:flex;gap:8px;align-items:center;background:var(--bg);border:1px solid var(--card-border);border-radius:14px;padding:8px 14px}
+.search input{flex:1;border:0;background:transparent;color:var(--ink);font-family:inherit;font-size:1rem;outline:none}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.fbtn{border:1px solid var(--card-border);background:var(--chip);color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer;font-family:inherit;font-size:.88rem;font-weight:700}
+.fbtn.active{background:var(--green);color:#fff;border-color:var(--green)}
+.stats{display:flex;gap:10px;margin:14px 2px;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:10px}
+.card{background:var(--bg2);border:1px solid var(--card-border);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;transition:.25s}
+.card:hover{transform:translateY(-3px)}
+.card-head{padding:16px 16px 12px;display:flex;gap:12px;align-items:center}
+.num{width:56px;height:56px;flex-shrink:0;border-radius:18px;background:var(--accent-grad);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1}
+.num b{font-size:1.1rem}.num span{font-size:.68rem;opacity:.9}
+.titles{flex:1}.titles h3{margin:0;font-family:'Amiri';font-size:1.45rem;color:var(--ink)}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.tag{font-size:.75rem;background:var(--chip);border:1px solid var(--card-border);padding:2px 10px;border-radius:999px;color:var(--muted)}
+.tag.makki{background:#e8f5ee;color:#0e5a4a;border-color:#c4e5d3}
+[data-theme="dark"] .tag.makki{background:#14332a;color:#7fd1b9}
+.tag.madani{background:#eef2ff;color:#3730a3;border-color:#c7d2fe}
+[data-theme="dark"] .tag.madani{background:#232a4d;color:#b9c2ff}
+.toggle{border:0;background:var(--gold2);color:#3a2f00;width:38px;height:38px;border-radius:12px;cursor:pointer;font-size:1.2rem;font-weight:800}
+.card-body{padding:0 16px 16px;display:none}
+.card.open .card-body{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1}}
+.row{border-top:1px dashed var(--card-border);padding:10px 0}
+.row h4{margin:0 0 4px;font-size:.95rem;color:var(--gold);display:flex;gap:6px;align-items:center}
+.row p{margin:0;font-size:.96em}
+.words{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.w{background:var(--bg);border:1px solid var(--card-border);border-radius:12px;padding:6px 10px;font-size:.88em}
+.w b{color:var(--green2)}
+footer{text-align:center;color:var(--muted);padding:26px;font-size:.9rem}
+.fab{position:fixed;bottom:18px;left:18px;display:flex;flex-direction:column;gap:8px;z-index:10}
+.fab button{width:48px;height:48px;border-radius:50%;border:1px solid var(--card-border);background:var(--bg2);color:var(--ink);box-shadow:var(--shadow);cursor:pointer;font-size:1.2rem;font-weight:800}
+.hadith{max-width:760px;margin:16px auto 0;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:18px;padding:12px 18px;position:relative;z-index:2;backdrop-filter:blur(8px);font-family:'Amiri';font-size:1.15rem}
+.hadith small{display:block;font-family:'Tajawal';font-size:.8rem;opacity:.85;margin-top:4px}
+.section-title{grid-column:1/-1;background:var(--bg2);border:1px solid var(--card-border);border-radius:18px;box-shadow:var(--shadow);padding:12px 18px;display:flex;align-items:center;gap:12px;margin-top:10px}
+.section-title .ic{width:44px;height:44px;border-radius:14px;background:var(--accent-grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+.section-title h2{margin:0;font-family:'Amiri';font-size:1.35rem}
+.section-title p{margin:0;font-size:.85rem;color:var(--muted)}
+.section-title .cnt{margin-inline-start:auto;background:var(--chip);border:1px solid var(--card-border);border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:700}
+@media(max-width:600px){.topbar{flex-direction:column}.grid{grid-template-columns:1fr}header.hero{padding-bottom:100px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="topbar">
+    <div class="brand"><div class="logo">📖</div><div>تبيان المفصّل<br><small style="font-weight:400;opacity:.85">من سورة ق إلى الناس • 65 سورة</small></div></div>
+    <div class="controls">
+      <button class="btn" id="themeBtn">🌙 ليلي</button>
+      <button class="btn" onclick="changeFont(1)">+ تكبير الخط</button>
+      <button class="btn" onclick="changeFont(-1)">− تصغير الخط</button>
+      <button class="btn" onclick="resetFont()">↺ افتراضي</button>
+    </div>
+  </div>
+  <h1>تبيان المفصّل</h1>
+  <p>دليلك المختصر الجميل: اسم السورة وعدد آياتها ومقصدها وموضوعها العام وسبب نزولها والكلمات الغريبة فيها — بتصميم عربي متجاوب مع الجوال.</p>
+  <div class="hadith">«فُضِّلتُ بالمُفصَّل»<small>قال ﷺ: «أُعطيتُ مكان التوراة السبع، وأُعطيتُ مكان الزبور المِئين، وأُعطيتُ مكان الإنجيل المثاني، وفُضِّلتُ بالمُفصَّل» — رواه أحمد • شعارنا: تبيانٌ لهدي المفصّل</small></div>
+</header>
+<div class="container">
+  <div class="toolbar">
+    <div class="search"><span>🔍</span><input id="q" placeholder="ابحث باسم السورة أو كلمة من مقصدها... مثال: الملك، الرحمن، الصبر"></div>
+    <div class="filters">
+      <button class="fbtn active" data-f="all">الكل</button>
+      <button class="fbtn" data-f="طوال">🕌 طوال المفصّل</button>
+      <button class="fbtn" data-f="أوساط">🕋 أوساط المفصّل</button>
+      <button class="fbtn" data-f="قصار">🌙 قصار المفصّل</button>
+      <button class="fbtn" data-f="مكية">مكية</button>
+      <button class="fbtn" data-f="مدنية">مدنية</button>
+    </div>
+  </div>
+  <div class="stats"><span id="count"></span><span>•</span><span>المفصّل: من سورة ق (50) إلى الناس (114)</span></div>
+  <div class="grid" id="grid"></div>
+  <footer>صُمم بحب لكتاب الله • اسحب للأسفل وافتح أي سورة لعرض تفاصيلها • المعلومات مختصرة من كتب التفسير وأسباب النزول</footer>
+</div>
+<div class="fab"><button onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button></div>
+<script>
+const DATA=[
+{n:50,t:"ق",a:45,m:"مكية",q:"إثبات البعث والرد على منكريه",s:"تقرير عقيدة البعث والحساب، وتهديد المكذبين، وتثبيت النبي ﷺ.",z:"لا سبب خاص؛ نزلت في مشركي مكة المنكرين للبعث.",w:[["الرَّجع","البعث بعد الموت"],["فروج","شقوق وصدوع"],["الحب الحصيد","القمح المحصود"]]},
+{n:51,t:"الذاريات",a:60,m:"مكية",q:"تحقيق الوعد بالبعث والرزق",s:"القسم على وقوع الجزاء، وعرض قصص الأنبياء، وأن الرزق بيد الله.",z:"لا سبب خاص.",w:[["الذاريات ذروا","الرياح تفرق التراب"],["الحُبُك","الطرق والمدارات في السماء"],["خرصوا","كذبوا وتخمينا"]]},
+{n:52,t:"الطور",a:49,m:"مكية",q:"إثبات النبوة والبعث والجزاء",s:"دحض شبهات المشركين حول النبي ﷺ، ووصف نعيم المتقين وعذاب المكذبين.",z:"لا سبب خاص.",w:[["الطور","الجبل الذي كلم الله عليه موسى"],["المسجور","المملوء نارا أو الموقد"],["تمور","تتحرك وتضطرب"]]},
+{n:53,t:"النجم",a:62,m:"مكية",q:"تنزيه الوحي وعلو الله",s:"إثبات صدق الوحي ومعراج النبي ﷺ، وإبطال عبادة الأصنام.",z:"نزلت ردا على المشركين الطاعنين في الوحي.",w:[["هوى","سقط وغرب"],["قاب قوسين","شدة القرب"],["اللات والعزى","أصنام مشهورة"]]},
+{n:54,t:"القمر",a:55,m:"مكية",q:"آيات الله واقتراب الساعة",s:"انشقاق القمر معجزة، وقصص الأمم المكذبة، وتيسير القرآن للذكر.",z:"نزلت لما طلب المشركون آية فانشق القمر.",w:[["انشق القمر","انفلق فلقتين"],["مستمر","دائم شديد أو باطل"],["ازدُجر","زُجر وطُرد"]]},
+{n:55,t:"الرحمن",a:78,m:"مدنية",q:"الامتنان بالنعم وتقرير الميزان",s:"تعداد نعم الله في الدنيا والآخرة، وتخويف الجن والإنس.",z:"نزلت ردا على من قال: وما الرحمن؟",w:[["آلاء","نعم"],["مارج","لهب مختلط"],["مدْهامتّان","خضراوان شديدتا الخضرة"]]},
+{n:56,t:"الواقعة",a:96,m:"مكية",q:"أصناف الناس يوم القيامة",s:"انقسام الناس إلى سابقين وأصحاب يمين وشمال، وبيان جزائهم.",z:"لا سبب خاص؛ وقيل نزلت في فقراء المهاجرين.",w:[["خافضة رافعة","تخفض أقواما وترفع آخرين"],["حور عين","نساء بيض واسعات العيون"],["الهيم","الإبل العطاش"]]},
+{n:57,t:"الحديد",a:29,m:"مدنية",q:"الإنفاق والتجرد لله",s:"عظمة الله، والحث على الإنفاق والجهاد، وذم الدنيا، ونور المؤمنين.",z:"نزلت في المؤمنين المتأخرين عن الإنفاق.",w:[["تكاثر","تفاخر بالكثرة"],["زينة","ما يُتزين به"],["غضب","سخط"]]},
+{n:58,t:"المجادلة",a:22,m:"مدنية",q:"العدل وحفظ الحقوق",s:"قصة خولة بنت ثعلبة في الظهار، وآداب المجالس، والنهي عن النجوى.",z:"نزلت في خولة بنت ثعلبة لما ظاهر منها زوجها أوس بن الصامت.",w:[["تجادلك","تحاورك وتراجعك"],["الظهار","قول الرجل لزوجته: أنت عليّ كظهر أمي"],["يتناجون","يتحدثون سرا"]]},
+{n:59,t:"الحشر",a:24,m:"مدنية",q:"عزة الله ونصرة رسوله",s:"إجلاء بني النضير، وأحكام الفيء، وفضح المنافقين.",z:"نزلت في غزوة بني النضير.",w:[["الحشر","الجمع والإخراج"],["يُخربون","يهدمون"],["خصاصة","حاجة وفقر"]]},
+{n:60,t:"الممتحنة",a:13,m:"مدنية",q:"الولاء والبراء",s:"النهي عن موالاة الكفار، وقصة حاطب، وأحكام المؤمنات المهاجرات.",z:"نزلت في حاطب بن أبي بلتعة لما كتب لقريش بخبر الفتح.",w:[["تمتحنوهن","تختبروهن"],["أولو الأرحام","الأقارب"],["لا تتخذوا عدوي","لا توالوهم"]]},
+{n:61,t:"الصف",a:14,m:"مدنية",q:"الصدق والجهاد",s:"ذم القول بلا عمل، والحث على الجهاد صفا واحدا، والتجارة الرابحة.",z:"نزلت لما سأل الصحابة عن أحب الأعمال إلى الله.",w:[["صفا","متراصين"],["مقتا","بغضا شديدا"],["بور","هالك"]]},
+{n:62,t:"الجمعة",a:11,m:"مدنية",q:"تعظيم الجمعة والذكر",s:"فضل بعثة النبي الأمي، ووجوب السعي للجمعة وترك البيع.",z:"نزلت لما انفض الناس عن الخطبة لقافلة اللهو.",w:[["يُزكيهم","يطهرهم"],["الأسفار","الكتب الكبار"],["انفضوا","تفرقوا"]]},
+{n:63,t:"المنافقون",a:11,m:"مدنية",q:"فضح النفاق",s:"صفات المنافقين وخطرهم، والتحذير من الاغترار بالدنيا.",z:"نزلت في عبد الله بن أبي لما قال: ليخرجن الأعز منها الأذل.",w:[["جُنّة","سترة"],["لوّوا رؤوسهم","أمالوها استهزاء"],["الخُشُب المسندة","أجسام بلا عقول"]]},
+{n:64,t:"التغابن",a:18,m:"مدنية",q:"اليقين والطاعة",s:"قدرة الله، والتحذير من فتنة الأموال والأولاد.",z:"نزلت في رجال أسلموا فمنعهم أهلوهم من الهجرة.",w:[["التغابن","يوم يغبن فيه أهل الجنة أهل النار"],["فتنة","اختبار"],["يوق شح نفسه","يُحمى من بخله"]]},
+{n:65,t:"الطلاق",a:12,m:"مدنية",q:"أحكام الأسرة والتقوى",s:"أحكام الطلاق والعدة والرجعة والنفقة، وعاقبة التقوى.",z:"نزلت في ابن عمر لما طلق امرأته حائضا.",w:[["العدة","المدة المحددة"],["بلغن أجلهن","قاربن نهاية العدة"],["مخرجا","فرجا وخلاصا"]]},
+{n:66,t:"التحريم",a:12,m:"مدنية",q:"تعظيم حدود الله",s:"عتاب النبي ﷺ في تحريم الحلال إرضاء لأزواجه، وضرب مثل للكافر والمؤمن.",z:"نزلت لما حرّم النبي ﷺ العسل أو مارية على نفسه.",w:[["تحرم","تمنع"],["صغت","مالت"],["قانتات","طائعات"]]},
+{n:67,t:"الملك",a:30,m:"مكية",q:"كمال الملك والقدرة",s:"إثبات عظمة الله في الخلق، والتحذير من عذاب جهنم.",z:"لا سبب خاص.",w:[["تبارك","تعاظم وكثر خيره"],["طباقا","طبقة فوق طبقة"],["مناكبها","جوانبها ونواحيها"]]},
+{n:68,t:"القلم",a:52,m:"مكية",q:"الدفاع عن النبي ﷺ",s:"تنزيه النبي عن الجنون، وقصة أصحاب الجنة، وبيان أخلاقه العظيمة.",z:"نزلت ردا على قول المشركين: إنه لمجنون.",w:[["نون","حرف كسائر الحروف"],["زنيم","لئيم دعيّ"],["الصارم","الحاصد"]]},
+{n:69,t:"الحاقة",a:52,m:"مكية",q:"تحقيق وقوع القيامة",s:"أهوال القيامة، وهلاك الأمم المكذبة، وجزاء أصحاب اليمين والشمال.",z:"لا سبب خاص.",w:[["الحاقة","القيامة الواجبة الوقوع"],["الطاغية","الصيحة المجاوزة للحد"],["غسلين","صديد أهل النار"]]},
+{n:70,t:"المعارج",a:44,m:"مكية",q:"الصبر على استعجال العذاب",s:"استعجال الكفار العذاب، وصفة الإنسان الهلوع، وصفات المصلين.",z:"نزلت في النضر بن الحارث لما استعجل العذاب.",w:[["المعارج","المصاعد"],["المهل","عكر الزيت"],["الفصيلة","العشيرة"]]},
+{n:71,t:"نوح",a:28,m:"مكية",q:"الصبر في الدعوة",s:"قصة نوح في دعوته وصبره ألف سنة، وعاقبة الاستغفار.",z:"لا سبب خاص.",w:[["دعوت قومي","ناداهم للإيمان"],["فرارا","نفورا"],["وقارا","عظمة"]]},
+{n:72,t:"الجن",a:28,m:"مكية",q:"عموم الرسالة للثقلين",s:"استماع الجن للقرآن وإيمانهم، وأن الغيب لله وحده.",z:"نزلت لما قرأ النبي ﷺ القرآن ببطن نخلة فاستمعته الجن.",w:[["نفر","جماعة"],["رهقا","طغيانا"],["تحروا رشدا","قصدوا الحق"]]},
+{n:73,t:"المزمل",a:20,m:"مكية",q:"الإعداد للرسالة",s:"الأمر بقيام الليل والصبر، وتخفيف القيام بعد ذلك.",z:"نزلت أول البعثة لما تدثر النبي ﷺ.",w:[["المزمل","الملتف بثيابه"],["رتّل","اقرأ بتؤدة"],["وبيلا","شديدا"]]},
+{n:74,t:"المدثر",a:56,m:"مكية",q:"الإنذار والقيام بالدعوة",s:"الأمر بالإنذار والتطهير، ووصف سقر، وكل نفس بما كسبت رهينة.",z:"نزلت بعد فترة الوحي لما تدثر النبي ﷺ.",w:[["المدثر","المتغطي"],["الرجز","الأصنام أو العذاب"],["سقر","جهنم"]]},
+{n:75,t:"القيامة",a:40,m:"مكية",q:"إثبات البعث",s:"أهوال القيامة، وحال البر والفاجر، وقدرة الله على جمع العظام.",z:"نزلت في عدي بن ربيعة لما أنكر البعث.",w:[["البنان","أطراف الأصابع"],["برقت","تحيرت"],["المساق","السوق إلى المحشر"]]},
+{n:76,t:"الإنسان",a:31,m:"مدنية",q:"الشكر والجزاء",s:"خلق الإنسان وابتلاؤه، وجزاء الأبرار، وأمر النبي بالصبر.",z:"نزلت في علي وفاطمة لما أطعموا المسكين واليتيم والأسير.",w:[["أمشاج","أخلاط"],["سلاسل","قيود"],["قمطريرا","شديد العبوس"]]},
+{n:77,t:"المرسلات",a:50,m:"مكية",q:"الوعيد للمكذبين",s:"القسم بالرياح على وقوع يوم الفصل، وويل للمكذبين.",z:"نزلت بمكة في غار.",w:[["المرسلات عرفا","الرياح"],["العاصفات","الرياح الشديدة"],["الفارقات","الملائكة"]]},
+{n:78,t:"النبأ",a:40,m:"مكية",q:"إثبات البعث والجزاء",s:"تساؤل المشركين عن النبأ العظيم، ودلائل القدرة، ووصف يوم الفصل.",z:"نزلت لما تساءل المشركون عن البعث.",w:[["النبأ العظيم","البعث"],["مهادا","فراشا"],["أحقابا","دهورا"]]},
+{n:79,t:"النازعات",a:46,m:"مكية",q:"الاعتبار بقدرة الله",s:"أهوال النزع والقيامة، وقصة موسى وفرعون، وأن الساعة علمها عند الله.",z:"لا سبب خاص.",w:[["النازعات غرقا","الملائكة تنزع الأرواح"],["الراجفة","النفخة الأولى"],["الطامة","الداهية العظمى"]]},
+{n:80,t:"عبس",a:42,m:"مكية",q:"العدل في الدعوة",s:"عتاب لطيف للنبي في إعراضه عن الأعمى، وبيان أن القرآن تذكرة.",z:"نزلت في ابن أم مكتوم الأعمى لما أعرض عنه النبي مشغولا بالكبراء.",w:[["عبس وتولى","قطب وأعرض"],["تصدى","تتعرض"],["سفرة","ملائكة كتبة"]]},
+{n:81,t:"التكوير",a:29,m:"مكية",q:"حقيقة يوم القيامة",s:"انقلاب الكون يوم القيامة، وإثبات صدق الوحي.",z:"لا سبب خاص.",w:[["كورت","لُفّت"],["العشار","النوق الحوامل"],["سُجّرت","أُوقدت"]]},
+{n:82,t:"الانفطار",a:19,m:"مكية",q:"الاغترار بكرم الله",s:"أهوال القيامة، وتذكير الإنسان بنعم الله، وأن الأبرار والفجار لمفترقون.",z:"لا سبب خاص.",w:[["انفطرت","انشقت"],["انتثرت","تساقطت"],["فجّرت","فُتح بعضها على بعض"]]},
+{n:83,t:"المطففين",a:36,m:"مكية",q:"العدل في المعاملة",s:"الوعيد للمطففين في الكيل، وجزاء الفجار والأبرار.",z:"نزلت في أهل المدينة لما كانوا يبخسون الكيل.",w:[["المطففين","المنقصين في الكيل"],["سجّين","سجن وضيق"],["علّيين","مكان عال"]]},
+{n:84,t:"الانشقاق",a:25,m:"مكية",q:"الكادح إلى الله",s:"أهوال القيامة، وأن الإنسان كادح إلى ربه، وأخذ الكتب باليمين والشمال.",z:"لا سبب خاص.",w:[["انشقت","انصدعت"],["كادح","عامل بجد"],["يحور","يرجع"]]},
+{n:85,t:"البروج",a:22,m:"مكية",q:"الثبات على الإيمان",s:"قصة أصحاب الأخدود، وتثبيت المؤمنين على الصبر.",z:"نزلت لتثبيت المؤمنين المستضعفين بمكة.",w:[["البروج","النجوم والمنازل"],["الأخدود","الشق في الأرض"],["الودود","المحب"]]},
+{n:86,t:"الطارق",a:17,m:"مكية",q:"حفظ الله للإنسان",s:"القسم بالنجم على حفظ الأعمال، وخلق الإنسان من ماء دافق.",z:"لا سبب خاص.",w:[["الطارق","النجم الذي يظهر ليلا"],["الثاقب","المضيء"],["الصُّلب والترائب","الظهر وعظام الصدر"]]},
+{n:87,t:"الأعلى",a:19,m:"مكية",q:"تنزيه الله",s:"تسبيح الله الأعلى، وتيسير القرآن، وفلاح من تزكى.",z:"لا سبب خاص.",w:[["سبّح","نزّه"],["غثاء أحوى","يابسا مسودا"],["يصلّى","يدخل"]]},
+{n:88,t:"الغاشية",a:26,m:"مكية",q:"الجزاء والتذكير",s:"وصف وجوه أهل النار والجنة، والدعوة للنظر في خلق الله.",z:"لا سبب خاص.",w:[["الغاشية","القيامة التي تغشى الناس"],["ضريع","شوك مرّ"],["نمارق","وسائد"]]},
+{n:89,t:"الفجر",a:30,m:"مكية",q:"سنة الابتلاء",s:"إهلاك الطغاة، وابتلاء الإنسان بالغنى والفقر، وأهوال القيامة.",z:"لا سبب خاص.",w:[["الفجر","الصبح"],["الشفع والوتر","الزوج والفرد"],["جابوا الصخر","قطعوه"]]},
+{n:90,t:"البلد",a:20,m:"مكية",q:"اقتحام العقبة",s:"كبد الإنسان، والتحريض على فك الرقاب وإطعام المساكين.",z:"نزلت في أبي الأشد لما اغتر بقوته.",w:[["كبد","تعب ومشقة"],["العقبة","الطريق الصعب"],["مسغبة","مجاعة"]]},
+{n:91,t:"الشمس",a:15,m:"مكية",q:"التزكية والفجور",s:"القسم على فلاح من زكى نفسه، وقصة ثمود.",z:"لا سبب خاص.",w:[["زكاها","طهرها"],["دساها","أخفاها بالمعاصي"],["دمدم","أطبق عليهم العذاب"]]},
+{n:92,t:"الليل",a:21,m:"مكية",q:"السعي المختلف",s:"اختلاف سعي الناس، وجزاء الكريم والبخيل.",z:"نزلت في أبي بكر لما اشترى بلالا وأعتقه.",w:[["يغشى","يغطي"],["تردى","هلك وسقط"],["تلظّى","تتوهج"]]},
+{n:93,t:"الضحى",a:11,m:"مكية",q:"رعاية الله لنبيه",s:"تسلية النبي ﷺ بعد فترة الوحي، وتذكيره بنعم الله، والحث على الإحسان.",z:"نزلت لما فتر الوحي وقال المشركون: ودعه ربه.",w:[["الضحى","أول النهار"],["سجى","سكن وغطى"],["قلى","أبغض وترك"]]},
+{n:94,t:"الشرح",a:8,m:"مكية",q:"البشرى بالفرج",s:"شرح صدر النبي، وأن مع العسر يسرا.",z:"نزلت تسلية للنبي ﷺ.",w:[["نشرح","نوسع"],["وِزرك","ذنبك وحملك"],["أنقض","أثقل"]]},
+{n:95,t:"التين",a:8,m:"مكية",q:"تكريم الإنسان",s:"القسم على خلق الإنسان في أحسن تقويم، والجزاء العادل.",z:"لا سبب خاص.",w:[["التين والزيتون","فاكهتان أو جبلان بالشام"],["تقويم","هيئة وصورة"],["ممنون","منقطع"]]},
+{n:96,t:"العلق",a:19,m:"مكية",q:"أول الوحي والعلم",s:"أول ما نزل، والأمر بالقراءة، وطغيان الإنسان، وتهديد أبي جهل.",z:"نزلت أول الوحي في غار حراء؛ وآخرها في أبي جهل لما نهى النبي عن الصلاة.",w:[["علق","دم جامد"],["الأكرم","الكثير الكرم"],["لنسفعا","لنأخذن بشدة"]]},
+{n:97,t:"القدر",a:5,m:"مكية",q:"فضل ليلة القدر",s:"عظمة ليلة القدر وأنها خير من ألف شهر.",z:"نزلت في فضل ليلة القدر.",w:[["ليلة القدر","ليلة الشرف"],["الروح","جبريل"],["مطلع الفجر","طلوعه"]]},
+{n:98,t:"البينة",a:8,m:"مدنية",q:"الفرقان بين الحق والباطل",s:"موقف أهل الكتاب من الرسالة، وجزاء المؤمنين والكافرين.",z:"نزلت في اليهود والنصارى لما طلبوا البينة.",w:[["البينة","الحجة الواضحة"],["منفكين","منتهين"],["القيمة","المستقيمة"]]},
+{n:99,t:"الزلزلة",a:8,m:"مدنية",q:"الجزاء الدقيق",s:"أهوال الزلزلة الكبرى، وأن مثقال الذرة محسوب.",z:"نزلت لما سأل الصحابة عن الحساب الدقيق.",w:[["زلزلت","حُركت بشدة"],["أثقالها","موتاها وكنوزها"],["مثقال ذرة","وزن نملة صغيرة"]]},
+{n:100,t:"العاديات",a:11,m:"مكية",q:"جحود الإنسان",s:"القسم بالخيل على جحود الإنسان، وإثبات البعث.",z:"نزلت في سرية بعثها النبي فأبطأ خبرها.",w:[["العاديات ضبحا","الخيل تجري"],["الموريات قدحا","الخيل تقدح الشرر"],["كنود","جحود"]]},
+{n:101,t:"القارعة",a:11,m:"مكية",q:"الموازين",s:"أهوال القارعة، وثقل الموازين وخفتها.",z:"لا سبب خاص.",w:[["القارعة","القيامة التي تقرع القلوب"],["الفراش المبثوث","المنتشر"],["هاوية","جهنم"]]},
+{n:102,t:"التكاثر",a:8,m:"مكية",q:"ذم الغفلة",s:"النهي عن التفاخر بالكثرة، والتحذير من عذاب الجحيم.",z:"نزلت في قبيلتين تفاخرتا بالكثرة.",w:[["ألهاكم","شغلكم"],["المقابر","زرتم الموتى للمفاخرة"],["عين اليقين","المشاهدة"]]},
+{n:103,t:"العصر",a:3,m:"مكية",q:"دستور النجاة",s:"خسارة الإنسان إلا من آمن وعمل صالحا وتواصى بالحق والصبر.",z:"لا سبب خاص.",w:[["العصر","الدهر"],["خُسر","نقصان وهلاك"],["تواصوا","أوصى بعضهم بعضا"]]},
+{n:104,t:"الهمزة",a:9,m:"مكية",q:"عاقبة السخرية",s:"الوعيد للمغتاب الساخر الجامع للمال.",z:"نزلت في أمية بن خلف والوليد بن المغيرة لغمزهما النبي.",w:[["هُمزة لُمزة","مغتاب ساخر"],["الحطمة","جهنم التي تحطم"],["ممددة","مطولة"]]},
+{n:105,t:"الفيل",a:5,m:"مكية",q:"حماية البيت",s:"قصة أبرهة وجيش الفيل، وحفظ الله للكعبة.",z:"نزلت تذكيرا بنعمة حماية الكعبة عام الفيل.",w:[["كيدهم","مكرهم"],["أبابيل","جماعات"],["سجّيل","طين متحجر"]]},
+{n:106,t:"قريش",a:4,m:"مكية",q:"شكر النعم",s:"امتنان الله على قريش بالأمن والرزق، ودعوتهم لعبادته.",z:"متصلة بالفيل؛ نزلت في نعم الله على قريش.",w:[["إيلاف","ألفة واعتياد"],["رحلة الشتاء والصيف","لليمن والشام"],["البيت","الكعبة"]]},
+{n:107,t:"الماعون",a:7,m:"مكية",q:"ذم الرياء",s:"صفات المكذبين بالدين: منع الحقوق والرياء ومنع الماعون.",z:"نزلت في المنافقين المرائين.",w:[["يُكذب بالدين","بالجزاء"],["ساهون","غافلون"],["الماعون","ما يُعان به كالقدر والفأس"]]},
+{n:108,t:"الكوثر",a:3,m:"مكية",q:"فضل النبي ﷺ",s:"إعطاء الله الكوثر لنبيه، والأمر بالصلاة والنحر، وأن شانئه هو الأبتر.",z:"نزلت لما قال المشركون عن النبي: أبتر (لا عقب له).",w:[["الكوثر","الخير الكثير ونهر في الجنة"],["شانئك","مبغضك"],["الأبتر","المنقطع"]]},
+{n:109,t:"الكافرون",a:6,m:"مكية",q:"المفاصلة في التوحيد",s:"البراءة من عبادة الكفار، وأن لكل دينه.",z:"نزلت لما عرض المشركون على النبي عبادة آلهتهم سنة ويعبدون إلهه سنة.",w:[["الكافرون","المشركون"],["أعبد ما تعبدون","الأصنام"],["دينكم","شرككم"]]},
+{n:110,t:"النصر",a:3,m:"مدنية",q:"شكر الفتح",s:"البشارة بفتح مكة ودخول الناس في الإسلام، والأمر بالتسبيح والاستغفار.",z:"نزلت في فتح مكة وهي آخر سورة كاملة.",w:[["الفتح","فتح مكة"],["أفواجا","جماعات"],["توابا","كثير قبول التوبة"]]},
+{n:111,t:"المسد",a:5,m:"مكية",q:"عاقبة العداء",s:"الوعيد لأبي لهب وامرأته لإيذائهما النبي ﷺ.",z:"نزلت لما قال أبو لهب: تبا لك؛ بعد دعوته على الصفا.",w:[["تبّت","خسرت"],["جيدها","عنقها"],["مسد","ليف"]]},
+{n:112,t:"الإخلاص",a:4,m:"مكية",q:"التوحيد الخالص",s:"صفة الله الأحد الصمد الذي لم يلد ولم يولد.",z:"نزلت لما سأل المشركون: صف لنا ربك.",w:[["أحد","واحد متفرد"],["الصمد","المقصود في الحوائج"],["كفوا","مثيلا"]]},
+{n:113,t:"الفلق",a:5,m:"مكية",q:"الاستعاذة",s:"الأمر بالاستعاذة برب الفلق من الشرور.",z:"نزلت لما سُحر النبي ﷺ.",w:[["الفلق","الصبح"],["غاسق","الليل الشديد"],["النفاثات","الساحرات"]]},
+{n:114,t:"الناس",a:6,m:"مكية",q:"الاستعاذة من الوسواس",s:"الاستعاذة برب الناس من وسوسة الشيطان.",z:"نزلت مع الفلق لما سُحر النبي ﷺ.",w:[["الوسواس","الشيطان الموسوس"],["الخناس","المتخفي"],["الجنة","الجن"]]},
+];
+let curF='all';
+function sec(n){return n<=78?'طوال':(n<=93?'أوساط':'قصار');}
+const SECINFO={'طوال':{i:'🕌',t:'طوال المفصّل',d:'من سورة ق (50) إلى النبأ (78) • 29 سورة',r:'ق – النبأ'},'أوساط':{i:'🕋',t:'أوساط المفصّل',d:'من النازعات (79) إلى الضحى (93) • 15 سورة',r:'النازعات – الضحى'},'قصار':{i:'🌙',t:'قصار المفصّل',d:'من الشرح (94) إلى الناس (114) • 21 سورة',r:'الشرح – الناس'}};
+function card(d){
+  return `
+  <article class="card" id="c${d.n}">
+   <div class="card-head">
+    <div class="num"><b>${d.n}</b><span>آية ${d.a}</span></div>
+    <div class="titles"><h3>سورة ${d.t}</h3>
+     <div class="meta"><span class="tag">${sec(d.n)} المفصّل</span><span class="tag ${d.m==='مكية'?'makki':'madani'}">${d.m}</span><span class="tag">عدد الآيات: ${d.a}</span></div>
+    </div>
+    <button class="toggle" onclick="document.getElementById('c${d.n}').classList.toggle('open')">+</button>
+   </div>
+   <div class="card-body">
+    <div class="row"><h4>🎯 مقصد السورة</h4><p>${d.q}</p></div>
+    <div class="row"><h4>📖 الموضوع العام</h4><p>${d.s}</p></div>
+    <div class="row"><h4>📜 سبب النزول</h4><p>${d.z}</p></div>
+    <div class="row"><h4>📚 الكلمات الغريبة</h4><div class="words">${d.w.map(x=>`<span class="w"><b>${x[0]}:</b> ${x[1]}</span>`).join('')}</div></div>
+   </div>
+  </article>`;
+}
+function render(){
+  const q=document.getElementById('q').value.trim();
+  const grid=document.getElementById('grid');
+  let list=DATA.filter(d=>{
+    let ok=true;
+    if(curF==='مكية'||curF==='مدنية') ok=d.m===curF;
+    else if(['طوال','أوساط','قصار'].includes(curF)) ok=sec(d.n)===curF;
+    if(q) ok=ok&&(d.t.includes(q)||d.q.includes(q)||d.s.includes(q));
+    return ok;
+  });
+  document.getElementById('count').textContent='عرض '+list.length+' سورة من 65';
+  if(!list.length){grid.innerHTML='<p style="text-align:center;color:var(--muted)">لا نتائج — جرّب كلمة أخرى</p>';return;}
+  if(curF==='طوال'||curF==='أوساط'||curF==='قصار'||q||curF==='مكية'||curF==='مدنية'){
+    grid.innerHTML=list.map(card).join('');
+  }else{
+    let h='';
+    ['طوال','أوساط','قصار'].forEach(k=>{
+      let arr=list.filter(d=>sec(d.n)===k);
+      if(!arr.length) return;
+      h+=`<div class="section-title"><div class="ic">${SECINFO[k].i}</div><div><h2>${SECINFO[k].t}</h2><p>${SECINFO[k].d}</p></div><span class="cnt">${arr.length} سورة</span></div>`+arr.map(card).join('');
+    });
+    grid.innerHTML=h;
+  }
+}
+document.getElementById('q').addEventListener('input',render);
+document.querySelectorAll('.fbtn').forEach(b=>b.onclick=()=>{document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');curF=b.dataset.f;render();});
+const themeBtn=document.getElementById('themeBtn');
+function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('muf-theme',t);themeBtn.textContent=t==='dark'?'☀️ نهاري':'🌙 ليلي';}
+setTheme(localStorage.getItem('muf-theme')||'light');
+themeBtn.onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+let fs=parseFloat(localStorage.getItem('muf-fs')||'17');
+function applyFs(){document.documentElement.style.setProperty('--fs',fs+'px');localStorage.setItem('muf-fs',fs);}
+function changeFont(d){fs=Math.min(24,Math.max(14,fs+d));applyFs();}
+function resetFont(){fs=17;applyFs();}
+applyFs();render();
+</script>
+</body>
+</html>
